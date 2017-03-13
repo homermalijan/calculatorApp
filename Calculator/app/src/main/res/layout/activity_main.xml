@@ -270,12 +270,13 @@
                     android:layout_weight="1" />
 
                 <Button
-                    android:text="@string/equal"
+                    android:id="@+id/equalButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/equalButton"
-                    android:textSize="50sp"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:onClick="solveEquation"
+                    android:text="@string/equal"
+                    android:textSize="50sp" />
             </LinearLayout>
 
         </TableRow>

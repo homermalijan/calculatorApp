@@ -5,6 +5,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     boolean decimalClicked = false;
@@ -172,10 +176,10 @@ public class MainActivity extends AppCompatActivity {
 
         String input = t.getText().toString();
 
-        if(decimalClicked == false){
+        //if(decimalClicked == false){
             t.append(".");
-            decimalClicked = true;
-        }
+        //    decimalClicked = true;
+        //}
 
     }
 
@@ -215,7 +219,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (checker == 'X' || checker == '/' || checker == '-' || checker == '+' || checker == '(') {
         } else {
-            t.append("X");
+            t.append("/");
         }
 
     }
@@ -230,7 +234,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (checker == 'X' || checker == '/' || checker == '-' || checker == '+' || checker == '(') {
         } else {
-            t.append("/");
+            t.append("X");
         }
 
     }
@@ -263,5 +267,80 @@ public class MainActivity extends AppCompatActivity {
             t.append("+");
         }
 
+    }
+
+    //public void
+
+    public void solveEquation(View view){
+        TextView t = (TextView) findViewById(R.id.inputView);
+        String input = t.getText().toString().trim();
+
+        String[] holder1 = input.split("[X/+-]");
+        String[] holder2 = input.split("\\d+(\\.\\d+)?");
+
+        ArrayList<String> operands = new ArrayList<String>();
+        ArrayList<String> operators = new ArrayList<String>();
+
+        int i;
+
+        //copy
+        for(i = 0; i < holder1.length; i++)
+            operands.add(holder1[i]);
+
+        for(i = 0; i < holder2.length; i++)
+            operators.add(holder2[i]);
+
+        operators.remove(0);
+
+
+        //solve mul or div
+        for(i = 0; i < operators.size(); i++){
+
+            if(operators.get(i).equals("X")){
+                double product = Double.parseDouble(operands.get(i)) * Double.parseDouble(operands.get(i+1));
+                operands.set(i+1, Double.toString(product));
+            }
+
+            if(operators.get(i).equals("/")){
+                double quotient = Double.parseDouble(operands.get(i)) / Double.parseDouble(operands.get(i+1));
+                operands.set(i+1, Double.toString(quotient));
+            }
+
+            operands.remove(i);
+            operators.remove(i);
+            i = 0;
+        }
+
+
+        for(i = 0; i < operators.size(); i++){
+
+            if(operators.get(i).equals("+")){
+                double sum = Double.parseDouble(operands.get(i)) + Double.parseDouble(operands.get(i+1));
+
+                operands.remove(i);
+                operators.remove(i);
+
+                operands.set(i, Double.toString(sum));
+
+                i = 0;
+                if(operators.size() == 0)
+                    break;
+            }
+
+            if(operators.get(i).equals("-")){
+                double difference = Double.parseDouble(operands.get(i)) - Double.parseDouble(operands.get(i+1));
+
+                operands.remove(i);
+                operators.remove(i);
+
+                operands.set(i, Double.toString(difference));
+
+                i = 0;
+                if(operators.size() == 0)
+                    break;
+            }
+        }
+
+        t.setText(operands.get(0));
     }
 }
