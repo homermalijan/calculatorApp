@@ -26,14 +26,14 @@
             android:id="@+id/inputRow">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/inputView"
-                android:text="@string/hello"
-                android:textSize="50sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:gravity="right"
+                android:text="@string/hello"
+                android:textAppearance="@android:style/TextAppearance.Material.Large"
                 android:textColor="@color/inputTextColor"
-                android:textAppearance="@android:style/TextAppearance.Material.Large" />
+                android:textSize="50sp" />
 
         </TableRow>
 
@@ -48,36 +48,39 @@
                 android:layout_height="match_parent">
 
                 <Button
-                    android:text="@string/clear"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:id="@+id/clearButton"
-                    android:textSize="50sp"
-                    android:layout_weight="1" />
-
-                <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/parenthesis"
-                    android:textSize="50sp"
                     android:layout_weight="1"
-                    android:text="@string/parenthesis" />
+                    android:onClick="clearClick"
+                    android:text="@string/clear"
+                    android:textSize="50sp" />
 
                 <Button
-                    android:text="@string/percent"
+                    android:id="@+id/parenthesis"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="parenthesisClick"
+                    android:text="@string/parenthesis"
+                    android:textSize="50sp" />
+
+                <Button
                     android:id="@+id/percentButton"
-                    android:textSize="50sp"
-                    android:layout_weight="1" />
-
-                <Button
-                    android:text="@string/divide"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/percent"
+                    android:textSize="50sp" />
+
+                <Button
                     android:id="@+id/divideButton"
-                    android:textSize="50sp"
-                    android:layout_weight="1" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="divideClick"
+                    android:text="@string/divide"
+                    android:textSize="50sp" />
             </LinearLayout>
 
         </TableRow>
@@ -93,36 +96,40 @@
                 android:layout_height="match_parent">
 
                 <Button
-                    android:text="@string/eight"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:id="@+id/eightButton"
-                    android:textSize="50sp"
-                    android:layout_weight="1" />
-
-                <Button
-                    android:text="@string/nine"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/nineButton"
-                    android:textSize="50sp"
-                    android:layout_weight="1" />
-
-                <Button
+                    android:layout_weight="1"
+                    android:onClick="sevenClick"
                     android:text="@string/seven"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/sevenButton"
-                    android:textSize="50sp"
-                    android:layout_weight="1" />
+                    android:textSize="50sp" />
 
                 <Button
-                    android:text="@string/multiply"
+                    android:id="@+id/nineButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="eightClick"
+                    android:text="@string/eight"
+                    android:textSize="50sp" />
+
+                <Button
+                    android:id="@+id/sevenButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="nineClick"
+                    android:text="@string/nine"
+                    android:textSize="50sp" />
+
+                <Button
                     android:id="@+id/multiplyButton"
-                    android:textSize="50sp"
-                    android:layout_weight="1" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="multiplyClick"
+                    android:text="@string/multiply"
+                    android:textSize="50sp" />
 
             </LinearLayout>
 
@@ -139,36 +146,40 @@
                 android:layout_height="match_parent">
 
                 <Button
-                    android:text="@string/four"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:id="@+id/fourButton"
-                    android:textSize="50sp"
-                    android:layout_weight="1" />
-
-                <Button
-                    android:text="@string/five"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="fourClick"
+                    android:text="@string/four"
+                    android:textSize="50sp" />
+
+                <Button
                     android:id="@+id/fiveButton"
-                    android:textSize="50sp"
-                    android:layout_weight="1" />
-
-                <Button
-                    android:text="@string/six"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="fiveClick"
+                    android:text="@string/five"
+                    android:textSize="50sp" />
+
+                <Button
                     android:id="@+id/sixButton"
-                    android:textSize="50sp"
-                    android:layout_weight="1" />
-
-                <Button
-                    android:text="@string/minus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="sixClick"
+                    android:text="@string/six"
+                    android:textSize="50sp" />
+
+                <Button
                     android:id="@+id/minusButton"
-                    android:textSize="50sp"
-                    android:layout_weight="1" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="subtractClick"
+                    android:text="@string/minus"
+                    android:textSize="50sp" />
             </LinearLayout>
 
         </TableRow>
@@ -184,36 +195,40 @@
                 android:layout_height="match_parent">
 
                 <Button
-                    android:text="@string/one"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:id="@+id/oneButon"
-                    android:textSize="50sp"
-                    android:layout_weight="1" />
-
-                <Button
-                    android:text="@string/two"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="oneClick"
+                    android:text="@string/one"
+                    android:textSize="50sp" />
+
+                <Button
                     android:id="@+id/twoButton"
-                    android:textSize="50sp"
-                    android:layout_weight="1" />
-
-                <Button
-                    android:text="@string/three"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="twoClick"
+                    android:text="@string/two"
+                    android:textSize="50sp" />
+
+                <Button
                     android:id="@+id/threeButton"
-                    android:textSize="50sp"
-                    android:layout_weight="1" />
-
-                <Button
-                    android:text="@string/plus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="threeClick"
+                    android:text="@string/three"
+                    android:textSize="50sp" />
+
+                <Button
                     android:id="@+id/plusButton"
-                    android:textSize="50sp"
-                    android:layout_weight="1" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="addClick"
+                    android:text="@string/plus"
+                    android:textSize="50sp" />
             </LinearLayout>
 
         </TableRow>
@@ -229,20 +244,22 @@
                 android:layout_height="match_parent">
 
                 <Button
-                    android:text="@string/decimal"
+                    android:id="@+id/decimalButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/decimalButton"
-                    android:textSize="50sp"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:onClick="decimalClick"
+                    android:text="@string/decimal"
+                    android:textSize="50sp" />
 
                 <Button
-                    android:text="@string/zero"
+                    android:id="@+id/zeroButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/zeroButton"
-                    android:textSize="50sp"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:onClick="zeroClick"
+                    android:text="@string/zero"
+                    android:textSize="50sp" />
 
                 <Button
                     android:text="@string/plusMinus"
