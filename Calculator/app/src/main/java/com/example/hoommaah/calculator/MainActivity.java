@@ -294,51 +294,53 @@ public class MainActivity extends AppCompatActivity {
 
 
         //solve mul or div
-        for(i = 0; i < operators.size(); i++){
-
+        i = 0;
+        while(i < operators.size()){
             if(operators.get(i).equals("X")){
                 double product = Double.parseDouble(operands.get(i)) * Double.parseDouble(operands.get(i+1));
                 operands.set(i+1, Double.toString(product));
+
+                operands.remove(i);
+                operators.remove(i);
+                i = 0;
             }
 
-            if(operators.get(i).equals("/")){
+            else if(operators.get(i).equals("/")){
                 double quotient = Double.parseDouble(operands.get(i)) / Double.parseDouble(operands.get(i+1));
                 operands.set(i+1, Double.toString(quotient));
+
+                operands.remove(i);
+                operators.remove(i);
+                i = 0;
             }
 
-            operands.remove(i);
-            operators.remove(i);
-            i = 0;
+            else
+                i++;
         }
 
 
-        for(i = 0; i < operators.size(); i++){
-
+        i = 0;
+        while(i < operators.size()){
             if(operators.get(i).equals("+")){
                 double sum = Double.parseDouble(operands.get(i)) + Double.parseDouble(operands.get(i+1));
+                operands.set(i+1, Double.toString(sum));
 
                 operands.remove(i);
                 operators.remove(i);
-
-                operands.set(i, Double.toString(sum));
-
                 i = 0;
-                if(operators.size() == 0)
-                    break;
             }
 
-            if(operators.get(i).equals("-")){
+            else if(operators.get(i).equals("-")){
                 double difference = Double.parseDouble(operands.get(i)) - Double.parseDouble(operands.get(i+1));
+                operands.set(i+1, Double.toString(difference));
 
                 operands.remove(i);
                 operators.remove(i);
-
-                operands.set(i, Double.toString(difference));
-
                 i = 0;
-                if(operators.size() == 0)
-                    break;
             }
+
+            else
+                i++;
         }
 
         t.setText(operands.get(0));
